@@ -4,8 +4,8 @@ Welcome to the GitHub repository for my Master's thesis project! This repository
 ## Repository Structure
 
 - **Jupyter Notebooks:** Detailed notebooks with experiments and visualizations.
-- **Python Scripts:** Utility scripts for data processing and model implementation.
-- **P4 and Shell Scripts:** Supporting scripts for infrastructure setup and automation.
+- **P4 program:** P4 configuration.
+- **Python Scripts and Shell Scripts:** Supporting scripts for infrastructure setup and automation.
 
 ## Quick Start
 
