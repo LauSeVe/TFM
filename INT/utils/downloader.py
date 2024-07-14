@@ -15,7 +15,7 @@ class Downloader():
             scp_pre_command[0] = 'scp'
             scp_pre_command[5] = scp_pre_command[5].split("@")
             scp_pre_command[5] = scp_pre_command[5][0] + "@[" + scp_pre_command[5][1] + "]:~/" + file
-            scp_pre_command.append("./pcap")
+            scp_pre_command.append("./graphs")
             scp_file = ' '.join(scp_pre_command)
             print(scp_file)
             subprocess.run(scp_file, shell=True, capture_output=True, text=True)
