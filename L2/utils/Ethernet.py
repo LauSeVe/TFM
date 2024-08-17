@@ -16,8 +16,6 @@ dst_mac_widget = widgets.Text(value="22:33:44:55:66:11", description="Destinatio
 type_widget = widgets.Text(value="0800", description="Type:")
 
 
-
-
 # Button to create the IP Header
 button_Ether = ButtonPacket(description="Set Ethernet Header", packet=None)
 
@@ -54,36 +52,3 @@ def create_ether_header(src_mac, dst_mac, type):
     ethernet_packet = Ether(dst=dst_mac, src=src_mac, type=type)
     return ethernet_packet  
 
-
-def createEthernetImage(etherheader):
-    # Open an image
-    imageEthernet = Image.open("./images/ethernet.png")
-
-    # Create a drawing object
-    draw = ImageDraw.Draw(imageEthernet)
-
-    # Choose a font and size
-    font = ImageFont.load_default(size=30) 
-
-    # Choose text color
-    text_color = (0, 0, 0)  # Black
-
-    # dst
-    text_position = (45, 180)
-    text = str(etherheader.packet.dst)
-    draw.text(text_position, text, font=font, fill=text_color)
-
-    # src
-    text_position = (365, 180)
-    text = str(etherheader.packet.src)
-    draw.text(text_position, text, font=font, fill=text_color)
-
-    # type
-    text_position = (800, 180)
-    text = str(etherheader.packet.type)
-    draw.text(text_position, text, font=font, fill=text_color)
-
-    # Save the modified image
-    imageEthernet.save("./images/ethernet_header_configured.png")
-
-    return imageEthernet
